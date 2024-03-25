@@ -9,12 +9,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', [HomeController::class,'index']);
+Route::get('/home', HomeController::class);
 Route::post('/upload-file',[ImageController::class,'handleImage'])->name('upload-file');
+
+Route::get('success',function(){
+    return '<h1>Success Uploaded</h1>';
+})->name('success');
 
 Route::get('contact', function () {
     return "<h1>Contact Page</h1>";
 });
+
+ROute::get('download',[ImageController::class,'download'])->name('download');
 // Route Params
 Route::get('contact/{id}', function ($id) {
     return $id;

@@ -34,9 +34,6 @@ class HomeController extends Controller
     }
 
     public function __invoke(){
-        Storage::delete('/images/new-img.jpg');
-
-        // File::delete((storage_path('app/public/images/new-image.jpg')));
-        // unlink(storage_path('app/public/images/new-image.jpg'));
+        return view('home');
     }
 }
